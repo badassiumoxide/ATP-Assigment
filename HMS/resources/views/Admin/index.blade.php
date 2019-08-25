@@ -27,7 +27,11 @@
         <td>{{ $data->contact }}</td>
         <td>{{ $data->is_blocked }}</td>
         <td>
-          <a href="{{ route('Admin.banUser', $data->id) }}">BAN</a>
+          @if ($data->is_blocked == 'F') 
+            <a href="{{ route('Admin.banUser', $data->id) }}">BAN</a>
+          @else
+            <a href="{{ route('Admin.unbanUser', $data->id) }}">UNBAN</a>
+          @endif
           &nbsp;
           <a href="{{ route('Admin.deleteUser', $data->id) }}">DELETE</a>
         </td>

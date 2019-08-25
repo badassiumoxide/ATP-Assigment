@@ -31,8 +31,20 @@ class AdminController extends Controller {
     }
   }
 
-  public function banUser($id) {
+  public function banUser(Request $request, $id) {
+    $result = User::where('id', $id)->update(array(
+      'is_blocked'=>'T'
+    ));
+    $request->session()->put('users', User::all());
+    return redirect()->route('Admin.index');
+  }
 
+  public function unbanUser(Request $request, $id) {
+    $result = User::where('id', $id)->update(array(
+      'is_blocked'=>'F'
+    ));
+    $request->session()->put('users', User::all());
+    return redirect()->route('Admin.index');
   }
 
   public function deleteUser($id) {
