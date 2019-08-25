@@ -23,3 +23,5 @@ Route::get('/logout', 'LogoutController@index')->name('Logout.index');
 Route::get('/admin', 'AdminController@index')->name('Admin.index');
 Route::post('/admin/addUser', 'AdminController@addUser')->name('Admin.addUser');
 Route::get('/admin/addUser', 'AdminController@addUserPage')->name('Admin.addUserPage');
+Route::get('/admin/update/{id}', 'AdminController@banUser')->name('Admin.banUser');
+Route::get('/admin/delete/{id}', 'AdminController@deleteUser')->name('Admin.deleteUser');
