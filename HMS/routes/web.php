@@ -29,4 +29,5 @@ Route::get('/admin/deleteUser/{id}', 'AdminController@deleteUser')->name('Admin.
 
 // User Routes
 Route::get('/user', 'UserController@index')->name('User.index');
-Route::get('/admin/edit', 'UserController@editUserPage')->name('User.editUserPage');
+Route::post('/user/edit', 'UserController@editUser')->name('User.editUser');
+Route::get('/user/edit', 'UserController@editUserPage')->name('User.editUserPage');

@@ -11,6 +11,11 @@ class UserController extends Controller {
   }
 
   public function editUserPage() {
+    return view('User.edit');
+  }
+
+  public function editUser() {
+
     
   }
 }
