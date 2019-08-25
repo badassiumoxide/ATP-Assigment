@@ -35,11 +35,11 @@
         </tr>
       </table>
       <br>
-        @if (Session::has('Problem'))
-          <h3>
-            {{ Session::get('Problem') }}
-          </h3>
-        @endif
+      @if (Session::has('Problem'))
+        <h3>
+          {{ Session::get('Problem') }}
+        </h3>
+      @endif
       <div style="padding-left: 50px;">
         <input type="submit" name="addButton" value="ADD">
         &nbsp;
