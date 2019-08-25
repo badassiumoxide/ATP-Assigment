@@ -26,3 +26,7 @@ Route::get('/admin/addUser', 'AdminController@addUserPage')->name('Admin.addUser
 Route::get('/admin/banUser/{id}', 'AdminController@banUser')->name('Admin.banUser');
 Route::get('/admin/unbanUser/{id}', 'AdminController@unbanUser')->name('Admin.unbanUser');
 Route::get('/admin/deleteUser/{id}', 'AdminController@deleteUser')->name('Admin.deleteUser');
+
+// User Routes
+Route::get('/user', 'UserController@index')->name('User.index');
+Route::get('/admin/edit', 'UserController@editUserPage')->name('User.editUserPage');
