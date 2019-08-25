@@ -10,6 +10,6 @@
   <h1>ADMIN</h1>
   <a href="">ADD USER</a>  
   &nbsp; || &nbsp;
-  <a href="">LOG OUT</a>
+  <a href="{{ route('Logout.index') }}">LOG OUT</a>
 </body>
 </html>

@@ -16,5 +16,8 @@ Route::get('/', 'LoginController@index')->name('Login.index');
 Route::get('/login', 'LoginController@index')->name('Login.index');
 Route::post('/login', 'LoginController@login')->name('Login.login');
 
+// Logout Routes
+Route::get('/logout', 'LogoutController@index')->name('Logout.index');
+
 // Admin Routes
 Route::get('/admin', 'AdminController@index')->name('Admin.index');
