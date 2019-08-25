@@ -26,6 +26,7 @@ class AdminController extends Controller {
       $user->contact = $request->contact;
       $user->is_blocked = 'F';
       $user->save();
+      $request->session()->put('users', User::all());
       $request->session()->flash('Register', 'Registration Complete');  
       return redirect()->route('Admin.addUserPage');
     }
@@ -47,7 +48,9 @@ class AdminController extends Controller {
     return redirect()->route('Admin.index');
   }
 
-  public function deleteUser($id) {
-    
+  public function deleteUser(Request $request, $id) {
+    $ok = User::where('id', $id)->delete();
+    $request->session()->put('users', User::all());
+    return redirect()->route('Admin.index');
   }
 }
