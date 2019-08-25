@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Login Routes
+Route::get('/', 'LoginController@index')->name('Login.index');
+Route::get('/login', 'LoginController@index')->name('Login.index');
+Route::post('/login', 'LoginController@login')->name('Login.login');
+
+// Admin Routes
+Route::get('/admin', 'AdminController@index')->name('Admin.index');
